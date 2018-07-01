@@ -1,0 +1,32 @@
+<div class="row">
+    <div class="col-xs-2">
+		<section>
+			
+			<form novalidate [formGroup]="questionForm" (ngSubmit)="onSubmit()">
+				<div class="form-group" *ngFor="let field of fields">
+					[ngSwitch]="field.type"
+					<label>{{field.label}}</label>
+					<textarea *ngSwitchCase="type.Multiline" name="{{field.label}}" class="form-control" required="{{field.required}}"></textarea>
+					<select *ngSwitchCase="type.Combobox" name="{{field.label}}" class="form-control" required="{{field.required}}">
+						<option *ngFor="let field_option in field.options" value="{{field_option.value}}">{{field_option.value}}</option>
+					</select>
+					<ul *ngSwitchCase="type.Radiobutton" class="form-control">
+						<li><input *ngFor="let field_option in field.options" type="radio" formControlName="{{field.label}}" value="{{field_option.value}}"> {{field_option.value}}</li>
+					</ul>
+					<ul *ngSwitchCase="type.Checkbox" class="form-control">
+						<li><input *ngFor="let field_option in field.options" type="checkbox" name="{{field_option.value}}" value="{{field_option.value}}"> {{field_option.value}}</li>
+					</ul>
+					<input *ngSwitchCase="type.Singleline" type="text" class="form-control"
+						formControlName="{{field.label}}" required="{{field.required}}">
+					<input *ngSwitchCase="type.Date1" type="date" class="form-control"
+						formControlName="{{field.label}}" required="{{field.required}}">
+				</div>
+				
+				<div class="form-group">
+					<button type="submit" id="questionButton" class="btn"  [disabled]="!questionForm.valid" >SUBMIT</button>
+				</div>
+				
+			</form>
+		</section>
+    </div>
+</div>

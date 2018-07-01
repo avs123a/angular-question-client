@@ -1,0 +1,69 @@
+<div class="row">
+	<!-- Modal -->
+	<div id="FieldForm1" class="modal fade" role="dialog">
+		<div class="modal-dialog">
+
+		<!-- Modal content-->
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal">&times;</button>
+					<h4 class="modal-title">Add Field</h4>
+				</div>
+				<form novalidate [formGroup]="fieldForm" (ngSubmit)="onSubmit()">
+					<div class="modal-body">
+						<div class="form-group">
+							<label>Label: </label>
+							<input type="text" class="form-control"
+								formControlName="label" placeholder="Label" required>
+						</div>
+						<div class="form-group">
+							<label>Type: </label>
+							<select class="form-control" formControlName="label" placeholder="Label" required>
+								<option value="">
+							</select>
+						</div>
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-default" data-dismiss="modal">CANCEL</button>
+						<button type="submit" id="saveFieldButton" class="btn"  [disabled]="!fieldForm.valid" >SAVE</button>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+	<div class="container">
+		<div class="row">
+			<div class="col-md-2">
+				<strong>Fields</strong>
+			</div>
+			<div class="col-md-8"></div>
+			<div class="col-md-2">
+				<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#FieldForm1">+ ADD FIELD</button>
+			</div>
+		</div>
+		<div class="row">
+			<table class="table-striped">
+				<thead>
+					<tr>
+						<th>Label</th>
+						<th>Type</th>
+						<th>Required</th>
+						<th>Is Active</th>
+						<th></th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr *ngFor="let field of fields">
+						<th>{{field.label}}</th>
+						<td>{{field.type}}</td>
+						<td>{{field.required}}</td>
+						<td>{{field.active}}</td>
+						<td>
+							
+						</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	</div>
+</div>
