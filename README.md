@@ -1,27 +1,15 @@
 # QuestionClient
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.4.10.
+Angular client for :
+REST spring question server - https://github.com/avs123a/demoapp1
+REST play framework question server - https://github.com/avs123a/play-question-service
 
-## Development server
+# NOTE!!! THIS PROJECT NEED TO BE FINISHED AND FIXED!!!
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
-## Code scaffolding
-
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `-prod` flag for a production build.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+Installation:
+1.) crone repository
+2.) run command npm install
+3.) in files .service.ts change API URLs
+4.) Add CORS to server
+5.) run command ng-serve
